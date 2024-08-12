@@ -7,10 +7,9 @@ export default function PostList() {
 
     useEffect(() => {
         (async () => {
-            const result = await axios.get("http://localhost:4000/posts");
-
+            const result = await axios.get("http://localhost:4002/posts");
+            console.log(result.data);
             setPosts(result.data);
-            console.log(Object.values(posts), "POSs");
         })();
     }, []);
 
@@ -24,7 +23,7 @@ export default function PostList() {
                     <h1 className="text-white text-3xl fotn-bold pt-4">
                         {post.title}
                     </h1>
-                    <CommentList id={post.id} />
+                    <CommentList comments={post.comments} />
                     <CommentCreate id={post.id} />
                 </div>
             ))}
