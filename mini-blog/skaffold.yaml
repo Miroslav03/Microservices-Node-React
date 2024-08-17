@@ -11,47 +11,47 @@ build:
       context: client
       docker:
         dockerfile: Dockerfile
-      sync: 
+      sync:
         manual:
-          - dest: .
-            src: 'src/**/*.js'
+          - src: src/**/*.js
+            dest: .
     - image: miroslavbg/comments
       context: comments
       docker:
         dockerfile: Dockerfile
-      sync: 
+      sync:
         manual:
-          - dest: .
-            src: '*.js'
+          - src: "*.js"
+            dest: .
     - image: miroslavbg/event-bus
-      context: client
+      context: event-bus
       docker:
         dockerfile: Dockerfile
-      sync: 
+      sync:
         manual:
-          - dest: .
-            src: '*.js'  
+          - src: "*.js"
+            dest: .
     - image: miroslavbg/moderation
       context: moderation
       docker:
         dockerfile: Dockerfile
-      sync: 
+      sync:
         manual:
-          - dest: .
-            src: '*.js'
+          - src: "*.js"
+            dest: .
     - image: miroslavbg/posts
-      context: client
+      context: posts
       docker:
         dockerfile: Dockerfile
-      sync: 
+      sync:
         manual:
-          - dest: .
-            src: '*.js'
+          - src: "*.js"
+            dest: .
     - image: miroslavbg/query
-      context: client
+      context: query
       docker:
         dockerfile: Dockerfile
-      sync: 
+      sync:
         manual:
-          - dest: .
-            src: '*.js'                                
+          - src: "*.js"
+            dest: .
